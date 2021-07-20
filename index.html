@@ -1,32 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./CSS/style.css">
-        <link rel="stylesheet" href="./CSS/compatibility.css">
-        <script src="script.js" defer></script>
-        <link rel="icon" href="./images/">
-        <title>Pokedex | Gotta Catch Em All!</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/compatibility.css">
+    <script src="./pokedex.js" defer></script>
+    <link rel="icon" href="./images/">
+    <title>Pokedex | Gotta Catch Em All!</title>
+</head>
 
-    <body>
-        <header>
-            <a href=".index.html">POKEDEX</a>
-            <img src="./images/search.png">
-            <a href="./caught.html">CAUGHT = --</a>
-            <a href="./caught.html">MISSING = --</a>
-        </header>
+<body>
+    <header>
+        <input type="search" placeholder="POKEDEX" id="input">
+        <img src="./images/search.png" id="search">
+        <div>
+            <h3 id="caught">CAUGHT = --</h3>
+            <h3 id="missing">MISSING = --</h3>
+        </div>
+    </header>
 
-        <main>
+    <main id="pokedex">
+        <!-- <ul>
+            
+        </ul> -->
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+            </a>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/pokemon/bulbasaur.jpg">
+            <h4>000 POKEMON</h4>
+            <div id="type">
+                <h5>TYPE 1</h5>
+                <h5>TYPE 2</h5>
+            </div>
+            </a>
+        </div>
 
-        </main>
+        <!-- MODAL -->
+        <div class="modal">
+            <div class="modal-content">
+                <a href="javascript:history.back()"><img src="./images/arrow.png"></a>
+                <img src="./images/sample" class="pokemon-image">
+                <button type="button" class="collection">ADD TO COLLECTION</button>
+                <h2><img src="./images/insignia.png"> 000 POKEMON</h2>
+                <h3>Height: 0.0m Weight: 0.0kg</h3>
+                <h3>TYPE 1</h3>
+                <h3>TYPE 2</h3>
+                <h3>ABILITY</h3>
+                <h4>SPECIES</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quis pariatur similique recusandae qui
+                    ex possimus praesentium, earum ad repellendus rem corporis, sit sunt laudantium nobis, beatae
+                    provident a ipsum.</p>
+                <img src="./evolution1" class="evolution">
+                <img src="./images/pokeball.png" class="evolve-transition">
+                <img src="./evolution2" class="evolution">
+                <img src="./images/pokeball.png" class="evolve-transition">
+                <img src="./evolution3" class="evolution">
+            </div>
+        </div>
+    </main>
 
-        <footer>
-            <div>ISpecials thanks to <a href="https://www.freepik.com" title="Freepik">Freepik</a> at <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a></div>
-            <div>Icons made by <a href="http://www.roundicons.com" title="Roundicons Freebies">Roundicons Freebies</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        </footer>
-    </body>
+    <footer>
+        <div>Specials thanks to <a href="https://www.freepik.com" title="Freepik">FREEPIK</a> + <a
+                href="https://icon54.com/" title="Pixel perfect">PIXEL PERFECT</a> + <a href="http://www.roundicons.com"
+                title="Roundicons Freebies">ROUNDICONS</a> at <a href="https://www.flaticon.com/"
+                title="Flaticon">FLATICON.COM</a></div>
+    </footer>
+</body>
+
 </html>

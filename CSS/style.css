@@ -1,0 +1,192 @@
+/* FONTS */
+@font-face {
+    font-family: "EvioliteRegular";
+    src: url(../fonts/EvioliteRegular.ttf);
+}
+@font-face {
+    font-family: "PokemonGb";
+    src: url(../fonts/PokemonGb.ttf);
+}
+
+h1, h2, h3, h4, h5, a, p, header input {
+    font-family: "EvioliteRegular";
+    text-decoration: none;
+    color: rgb(252, 165, 5);
+    font-weight: 400;
+    margin: 0;
+}
+
+p, div {
+    font-family: "PokemonGb";
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 3.6vw;
+}
+
+h4 {
+    font-size: 3vw;
+}
+
+h5 {
+    font-size: 2.4vw;
+}
+
+a, p {
+    font-size: 1.5;
+}
+
+/* SPECS */
+body {
+    margin: 0;
+    background-color: rgb(231, 209, 252);
+}
+
+/* HEADER */
+header {
+    background-color: rgb(231, 209, 252);
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+}
+
+.nav-up {
+    top: -14vw;
+  }
+
+input, ::placeholder {
+    width: 69%;
+    background-color: transparent;
+    border: 0;
+    font-size: 9.9vw;
+    color: rgb(240, 145, 3);
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+input:focus {
+    border: 0;
+    color: rgb(240, 118, 3);
+    outline: none !important;
+}
+
+::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+header img {
+    width: 9%;
+}
+
+header img:hover, header h3:hover {
+    cursor: pointer;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22%;
+    padding-left: 3%;
+}
+
+header h3 {
+    margin: 0;
+}
+
+/* MAIN */
+#pokedex {
+    margin-left: 1%;
+    display: block;
+    columns: 5;
+    
+}
+
+.card {
+    border: 5px rgb(92, 13, 182) solid;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 1.5em;
+    text-align: center;
+    margin-right: 1%;
+    margin-bottom: 10%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+.card:hover {
+    border: 5px rgb(212, 79, 1) solid;
+}
+
+.card img {
+    width: 80%;
+}
+
+#type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MODAL */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 6em;
+}
+
+footer div {
+    font-size: .9em;
+}
+
+footer a {
+    font-size: 1.8em;
+}
