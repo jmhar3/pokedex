@@ -1,3 +1,12 @@
+/* COLOUR SCHEME */
+main {
+color: #FFDE00;
+color: #B3A125;
+color: #3B4CCA;
+color: #CC0000;
+color: #FF0000;
+}
+
 /* FONTS */
 @font-face {
     font-family: "EvioliteRegular";
@@ -11,7 +20,7 @@
 h1, h2, h3, h4, h5, a, p, header input {
     font-family: "EvioliteRegular";
     text-decoration: none;
-    color: rgb(252, 165, 5);
+    color: #CC0000;
     font-weight: 400;
     margin: 0;
 }
@@ -34,7 +43,7 @@ h3 {
 }
 
 h4 {
-    font-size: 3vw;
+    font-size: 2.7vw;
 }
 
 h5 {
@@ -42,18 +51,17 @@ h5 {
 }
 
 a, p {
-    font-size: 1.5;
+    font-size: .9vw;
 }
 
 /* SPECS */
 body {
     margin: 0;
-    background-color: rgb(231, 209, 252);
+    background-color: #f0eee0;
 }
 
 /* HEADER */
 header {
-    background-color: rgb(231, 209, 252);
     padding-left: 5%;
     padding-right: 5%;
     display: flex;
@@ -61,24 +69,19 @@ header {
     align-content: stretch;
 }
 
-.nav-up {
-    top: -14vw;
-  }
-
 input, ::placeholder {
     width: 69%;
     background-color: transparent;
     border: 0;
     font-size: 9.9vw;
-    color: rgb(240, 145, 3);
+    color: #3B4CCA;
     padding: 0;
     margin: 0;
     text-transform: uppercase;
 }
 
 input:focus {
-    border: 0;
-    color: rgb(240, 118, 3);
+    color: #CC0000;
     outline: none !important;
 }
 
@@ -92,6 +95,10 @@ header img {
 
 header img:hover, header h3:hover {
     cursor: pointer;
+}
+
+input:hover, header img:hover {
+    opacity: 87%;
 }
 
 header div {
@@ -109,35 +116,43 @@ header h3 {
 /* MAIN */
 #pokedex {
     margin-left: 1%;
-    display: block;
-    columns: 5;
-    
+    column-count: 5;
+    /* display: grid;
+    grid-gap: 3vw; */
 }
 
 .card {
-    border: 5px rgb(92, 13, 182) solid;
+    border: 5px #B3A125 solid;
     background-color: white;
     cursor: pointer;
     border-radius: 1.5em;
     text-align: center;
     margin-right: 1%;
     margin-bottom: 10%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
+    padding-top: .9vw;
+    padding-bottom: .9vw;
+    height: fit-content;
 }
 
 .card:hover {
-    border: 5px rgb(212, 79, 1) solid;
+    border: 5px #FFDE00 solid;
 }
 
-.card img {
-    width: 80%;
+img {
+    width: 80%; 
 }
 
-#type {
+.type {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.type p {
+    background-color: rgb(152, 105, 212);
+    padding: .9vw;
+    border-radius: 9px;
+    color: #fefefe;
 }
 
 /* MODAL */
