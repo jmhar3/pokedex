@@ -24,34 +24,38 @@
 
     <main id="pokedex">
 
+
         <!-- MODAL -->
         <div class="modal">
-            <div class="modal-content">
-                <a href="javascript:history.back()"><img src="./images/arrow.png"></a>
-                <img src="./images/sample" class="pokemon-image">
-                <button type="button" class="collection">ADD TO COLLECTION</button>
-                <h2><img src="./images/insignia.png"> 000 POKEMON</h2>
-                <h3>Height: 0.0m Weight: 0.0kg</h3>
-                <h3>TYPE 1</h3>
-                <h3>TYPE 2</h3>
-                <h3>ABILITY</h3>
-                <h4>SPECIES</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quis pariatur similique recusandae qui
-                    ex possimus praesentium, earum ad repellendus rem corporis, sit sunt laudantium nobis, beatae
-                    provident a ipsum.</p>
-                <img src="./evolution1" class="evolution">
-                <img src="./images/pokeball.png" class="evolve-transition">
-                <img src="./evolution2" class="evolution">
-                <img src="./images/pokeball.png" class="evolve-transition">
-                <img src="./evolution3" class="evolution">
+            <div class="modal-card">
+                <a href="javascript:history.back()" id="close"><img src="./images/arrow.png"></a>
+                <img src="./images/pokemon/venusaur-gigantamax.jpg" id="pokemon-image">
+                <div id="card-title">
+                    <img src="./images/insignia.png" id="insignia">
+                    <h2>000 POKEMON</h2>
+                </div>
+                <h2 class="heightWeight">Height: 0.0m Weight: 0.0kg</h2>
+                <p class="type">TYPE 1</p>
+                <div id="abilitySpecies">
+                    <h3>ABILITY</h3>
+                    <h3>SPECIES</h3>
+                </div>
+                <div id="evolutions">
+                    <img src="./images/pokemon/bulbasaur.jpg" class="evolution">
+                    <img src="./images/pokeball.png" class="evolve-transition">
+                    <img src="./images/pokemon/ivysaur.jpg" class="evolution">
+                    <img src="./images/pokeball.png" class="evolve-transition">
+                    <img src="./images/pokemon/venusaur.jpg" class="evolution">
+                </div>
+                <button type="button" id="collection-button">ADD TO COLLECTION</button>
             </div>
         </div>
     </main>
 
     <footer>
-        <div>Specials thanks to <a href="https://pokeapi.co/">POKEAPI</a> + <a href="https://www.freepik.com" title="Freepik">FREEPIK</a> + <a
-                href="https://icon54.com/" title="Pixel perfect">PIXEL PERFECT</a> + <a href="http://www.roundicons.com"
-                title="Roundicons Freebies">ROUNDICONS</a></div>
+        <div>Specials thanks to <a href="https://pokeapi.co/">POKEAPI</a> + <a href="https://www.freepik.com"
+                title="Freepik">FREEPIK</a> + <a href="https://icon54.com/" title="Pixel perfect">PIXEL PERFECT</a> + <a
+                href="http://www.roundicons.com" title="Roundicons Freebies">ROUNDICONS</a></div>
     </footer>
 </body>
 

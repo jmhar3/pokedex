@@ -50,7 +50,7 @@ function renderPokemon(pokeData){
     let pokeTypes = document.createElement('div')
     pokeTypes.className = 'type';
 
-    createTypes(pokeData.types, pokeTypes) // helper function to go through the types array and create li tags for each one
+    createTypes(pokeData.types, pokeTypes)
 
     pokeContainer.append(pokeTitle, pokeTypes);
 
@@ -92,29 +92,36 @@ searchBar.addEventListener('keyup', (e) => {
     renderPokemon(filteredPokemon);
 });
 
-//     //MODAL
-//     // let modal = document.getElementsByClassName("modal");
-//     // let card = document.getElementsByClassName("card");
-//     // let back = document.getElementsByClassName("collection")[0];
+    //MODAL
+    // let modal = document.getElementsByClassName("modal");
+    // let card = document.getElementsByClassName("card");
+    // let back = document.getElementsByClassName("collection")[0];
 
-//     // card.addEventListener("click", function () {
-//     //     modal.style.display = "block";
-//     // })
+    // card.addEventListener("click", function () {
+    //     modal.style.display = "block";
+    // })
 
-//     // back.addEventListener("click", function () {
-//     //     modal.style.display = "none";
-//     // })
+    // back.addEventListener("click", function () {
+    //     modal.style.display = "none";
+    // })
 
-//     // window.addEventListener("click", function () {
-//     //     if (event.target == modal) {
-//     //         modal.style.display = "none";
-//     //     }
-//     // })
+    // window.addEventListener("click", function () {
+    //     if (event.target == modal) {
+    //         modal.style.display = "none";
+    //     }
+    // })
 
-//     //CAUGHT CATALOGUE
-//     //     const collectionButton = document.getElementById('collection');
-//     //     collectionButton.addEventListener("click", function () {
-//     //         update pokemon[i].caught to true;
-//     //         if (pokemon[i].caught === true) update to false
-//     //     })
-// })
+    //CAUGHT CATALOGUE
+        let collectionButton = document.getElementById('collection-button');
+
+        collectionButton.addEventListener("click", function () {
+            if(collectionButton.innerText === "ADD TO COLLECTION") {
+                document.getElementById('collection-button').style.backgroundColor = '#3B4CCA';
+                collectionButton.innerText = "REMOVE FROM COLLECTION"
+                // update pokemon[i].caught to true;
+            } else(collectionButton.innerText === "REMOVE FROM COLLECTION"){
+                collectionButton.style.backgroundColor = '#CC0000';
+                collectionButton.innerText = "ADD TO COLLECTION"
+                // if (pokemon[i].caught === true) update to false
+            }
+        })
