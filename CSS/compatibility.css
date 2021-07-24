@@ -1,13 +1,17 @@
 @media only screen and (max-width: 768px) {
-    #pokedex {
-        margin-left: 1%;
-        column-count: 3;
-        /* display: grid;
-        grid-gap: 3vw; */
+
+    .card {
+        border-width: 3px;
+        width: 30%;
+    }
+
+    .card:hover {
+        border-width: 3px;
     }
 
     .type p {
         font-size: 1.8vw;
+        padding: .9vw;
     }
 
     h4 {
