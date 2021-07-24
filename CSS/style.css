@@ -154,7 +154,7 @@ img {
     padding: .6vw;
     border-radius: 9px;
     color: #fefefe;
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 
 .type p:hover {
@@ -192,8 +192,8 @@ img {
   }
 
  #close {
-      width: 4.2vw;
-      height: 4.2vw;
+      width: 4.5vw;
+      height: 4.5vw;
   }
 
   #insignia, .evolve-transition {
@@ -206,7 +206,8 @@ img {
   }
 
   #pokemon-image {
-      width: 39vw;
+      display: block;
+      width: 36vw;
   }
   
   #close {
@@ -237,6 +238,10 @@ img {
     margin-top: 1vw;
   }
 
+  #evolutions {
+      margin: 1.2vw;
+  }
+
   .evolution {
       margin-top: 1.2vw;
       width: 9vw;
@@ -244,6 +249,7 @@ img {
 
   .evolution:hover {
       cursor: pointer;
+      opacity: 84%;
   }
 
   #collection-button {

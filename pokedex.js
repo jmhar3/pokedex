@@ -40,10 +40,10 @@ function fetchPokemonData(pokemon) {
         .then(pokeData => {
             renderPokemon(pokeData)
         })
-    // .catch(function (error) {
-    //     alert("fetchPokemonData failed!");
-    //     console.log(error.message);
-    // })
+    .catch(function (error) {
+        alert("fetchPokemonData failed!");
+        console.log(error.message);
+    })
 }
 
 
@@ -86,18 +86,8 @@ function renderPokemon(pokeData) {
 
     allPokemonContainer.addEventListener('click', (e) => {
         if (e.target.classList.includes('.card')) {
-            openModal(pokedex);
+            document.querySelector(".modal").classList.remove("hidden");
         };
-    });
-
-    allPokemonContainer.addEventListener('click', (e) => {
-        if (e.target.innerText.includes('poison')) {
-            filteredData(pokeData.type == poison);
-        } else if (e.target.innerText.includes('poison')) {
-            filteredData(pokeData.type == poison);
-        } else if (e.target.innerText.includes('poison')) {
-            filteredData(pokeData.type == poison);
-        }
     });
 }
 
@@ -184,7 +174,7 @@ collectionButton.addEventListener("click", function () {
         document.getElementById('collection-button').innerText = "REMOVE FROM COLLECTION"
     } else {
         document.getElementById('collection-button').style.backgroundColor = '#CC0000';
-        document.getElementById('collection-button').innerText = "ADD TO COLLECTION"  
+        document.getElementById('collection-button').innerText = "ADD TO COLLECTION"
     };
 })
 
