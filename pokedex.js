@@ -40,15 +40,15 @@ searchIcon.addEventListener('click', () => {
 
 // SEARCH BAR - fix
 
-searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value.toLowerCase();
-    const filteredPokemon = pokemon.filter(pokeData => {
-        return (
-            pokeData.name.toLowerCase().includes(searchString) || pokeData.type.toLowerCase().includes(searchString)
-        );
-    });
-    renderPokemon(filteredPokemon);
-});
+// searchBar.addEventListener('keyup', (e) => {
+//     const searchString = e.target.value.toLowerCase();
+//     const filteredPokemon = pokemon.filter(pokeData => {
+//         return (
+//             pokeData.name.toLowerCase().includes(searchString) || pokeData.type.toLowerCase().includes(searchString)
+//         );
+//     });
+//     renderPokemon(filteredPokemon);
+// });
 
 // POKEDEX
 // const allPokemon = []
@@ -56,44 +56,61 @@ searchBar.addEventListener('keyup', (e) => {
 // PARSE DATA TO GET ARRAY OF OBJECTS
 // use async + await to simplify?
 
+const pokedex = document.getElementById('pokedex');
+const pokemonQuantity = 150;
+
+const fetchPokemon = async () => {
+    for(let i = 1; i <= pokemonQuantity; i++) {
+        await getPokemon(i);
+    }
+}
+
+const getPokemon = async id => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const res = await fetch(url);
+    const pokeData = await res.json();
+    renderPokemon(pokeData);
+}
+
+fetchPokemon();
 
 // FETCH POKEMON LIST INCLUDING NAME + URL
 
-const fetchPokemonList = async () => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-        .then(response => response.json())
-        .then(allPokemon => {
-            allPokemon.results.forEach(pokemon => {
-                fetchPokemonData(pokemon);
-                // filterPokemon();
-            })
-        })
-        .catch(error => {
-            console.log("fetchPokemonList failed");
-            console.log(error.message);
-        })
-}
+// const fetchPokemonList = async () => {
+//     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+//         .then(response => response.json())
+//         .then(allPokemon => {
+//             allPokemon.results.forEach(pokemon => {
+//                 fetchPokemonData(pokemon);
+//                 // filterPokemon();
+//             })
+//         })
+//         .catch(error => {
+//             console.log("fetchPokemonList failed");
+//             console.log(error.message);
+//         })
+// }
 
 // FETCH INDIVIDUAL STATS
 
-const fetchPokemonData = async (pokemon) => {
-    let url = pokemon.url
-    fetch(url)
-        .then(response => response.json())
-        .then(pokeData => {
-            // const converted = JSON.parse(pokeData)
-            // renderPokemon(converted);
-            renderPokemon(pokeData);
-        })
-        .catch(error => {
-            console.log("fetchPokemonData failed!");
-            console.log(error.message);
-        })
-}
+// const fetchPokemonData = async (pokemon) => {
+//     let url = pokemon.url
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(pokeData => {
+//             // const converted = JSON.parse(pokeData)
+//             // renderPokemon(converted);
+//             renderPokemon(pokeData);
+//         })
+//         .catch(error => {
+//             console.log("fetchPokemonData failed!");
+//             console.log(error.message);
+//         })
+// }
 
-// GENERATE POKEMON CARD INFO
+GENERATE POKEMON CARD INFO
 
-const renderPokemon = async (pokeData) => {
+function renderPokemon(pokeData) {
     let allPokemonContainer = document.getElementById('pokedex');
     let card = document.createElement("div")
     card.classList.add('card');
@@ -158,6 +175,14 @@ function createPokeImage(pokeID, containerDiv) {
     pokeImgContainer.append(pokeImage);
     containerDiv.append(pokeImgContainer);
 }
+
+// // OPEN MODAL
+// const cards = document.querySelectorAll(".card")
+// for (const card of cards) {
+//   card.addEventListener('click', function(event) {
+//     document.querySelector(".modal").classList.remove("hidden");
+//   })
+// }
 
 // //MODAL INFO
 // //fix
