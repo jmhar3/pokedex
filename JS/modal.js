@@ -11,6 +11,32 @@ close.addEventListener("click", () => {
 })
 
 
+// COLLECTION BUTTON
+
+const collectionButton = document.querySelector('#collection-button')
+
+collectionButton.addEventListener("click", () => {
+    if (collectionButton.innerText === "ADD TO COLLECTION") {
+        collectionButton.style.backgroundColor = 'royalblue';
+        collectionButton.innerText = "REMOVE FROM COLLECTION"
+    } else {
+        collectionButton.style.backgroundColor = '#CC0000';
+        collectionButton.innerText = "ADD TO COLLECTION"
+    };
+})
+
+document.addEventListener("click", addToCollection);
+
+function addToCollection(e) {
+    const button = e.target;
+
+    if (button.classList === "title") {
+        const card = button.parentElement;
+        card.classList.toggle('caught');
+    }
+}
+
+
 // COLLECTION
 
 // let caughtTally = document.getElementById('caught');
@@ -42,18 +68,3 @@ close.addEventListener("click", () => {
 
 // // clear
 // localStorage.clear();
-
-
-// COLLECTION BUTTON
-
-const collectionButton = document.querySelector('#collection-button')
-
-collectionButton.addEventListener("click", () => {
-    if (collectionButton.innerText === "ADD TO COLLECTION") {
-        collectionButton.style.backgroundColor = 'royalblue';
-        collectionButton.innerText = "REMOVE FROM COLLECTION"
-    } else {
-        collectionButton.style.backgroundColor = '#CC0000';
-        collectionButton.innerText = "ADD TO COLLECTION"
-    };
-})

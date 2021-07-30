@@ -13,15 +13,25 @@ const getPokemon = async id => {
     try {
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
         const res = await fetch(url);
-        const pokemons = await res.json();
-        renderPokemon(pokemons);
+        const pokemon = await res.json();
+        renderPokemon(pokemon);
+        storePokemon(pokemon);
     } catch (err) {
         console.error(err);
     }
 }
 
+
 fetchPokemon();
 
+
+// STORE POKEMON
+
+const pokemons = [];
+
+function storePokemon(pokemon) {
+    pokemons.push(pokemon);
+}
 
 // RENDER POKEMON
 
@@ -40,6 +50,7 @@ const renderPokemon = pokemons => {
 
     let pokeTitle = document.createElement('h4')
     pokeTitle.innerText = `${pokeID} ${pokeName}`
+    pokeTitle.classList.add('title');
 
     let pokeTypes = document.createElement('div')
     pokeTypes.className = 'type';
