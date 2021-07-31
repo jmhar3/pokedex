@@ -29,6 +29,8 @@ fetchPokemon();
 
 const pokemons = [];
 
+console.log(pokemons);
+
 function storePokemon(pokemon) {
     pokemons.push(pokemon);
 }

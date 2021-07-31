@@ -92,6 +92,7 @@ input, ::placeholder {
     margin: 0;
     text-transform: uppercase;
     border-radius: 0;
+    height: 10vw;
 }
 
 input:focus {
