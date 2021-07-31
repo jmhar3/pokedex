@@ -1,6 +1,6 @@
 // BACK TO TOP
 
-const icon = document.getElementById('search');
+const icon = document.getElementById('header-icon');
 
 icon.addEventListener('click', () => {
     document.body.scrollTop = 0;
@@ -28,11 +28,14 @@ searchBar.addEventListener('keyup', (e) => {
 
 // FILTER TYPES
 
-// card.addEventListener('click', (e) => {
+// const type = document.querySelectorAll('type')
+
+// type.addEventListener('click', (e) => {
 //     const typeClicked = e.target.innerText;
+//     console.log(e.target)
 //     const filteredTypes = pokemons.filter(pokemon => {
 //         return (
-//             pokemon.types[0].type.name.toLowerCase().includes(searchString)
+//             pokemon.types[0].type.name.includes(typeClicked)
 //         );
 //     });
 //     pokeContainer.innerHTML = "";
@@ -42,15 +45,16 @@ searchBar.addEventListener('keyup', (e) => {
 
 // FILTER COLLECTION
 
-// const caughtTally = document.querySelector('#caught');
-// const missingTally = document.querySelector('#missing');
+const caughtTally = document.querySelector('#caught');
+const missingTally = document.querySelector('#missing');
 
-// caughtTally.addEventListener("click", () => {
+// caughtTally.addEventListener("click", (e) => {
 //     const caughtPokemon = pokemons.filter(pokemon => {
-//         return pokemon.classList.contains('caught');
+//         return pokemon.collection.includes('caught');
 //     })
 //     pokeContainer.innerHTML = "";
 //     caughtPokemon.forEach(pokemon => renderPokemon (pokemon));
+//     console.log(caughtPokemon)
 // });
 
 // missingTally.addEventListener("click", () => {

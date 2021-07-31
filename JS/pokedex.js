@@ -21,7 +21,6 @@ const getPokemon = async id => {
     }
 }
 
-
 fetchPokemon();
 
 
@@ -29,11 +28,10 @@ fetchPokemon();
 
 const pokemons = [];
 
-console.log(pokemons);
-
 function storePokemon(pokemon) {
     pokemons.push(pokemon);
 }
+
 
 // RENDER POKEMON
 
@@ -41,7 +39,7 @@ const card = document.getElementsByClassName('card');
 
 const renderPokemon = pokemons => {
     let pokedex = document.getElementById('pokedex');
-    let card = document.createElement("div")
+    let card = document.createElement("a")
     card.classList.add('card');
 
     createPokeImage(pokemons.id, card);
@@ -59,7 +57,12 @@ const renderPokemon = pokemons => {
 
     createTypes(pokemons.types, pokeTypes)
 
-    card.append(pokeTitle, pokeTypes);
+    let button = document.createElement('button');
+    button.innerText = 'ADD TO COLLECTION';
+    button.classList.add('collection-button');
+    // button.addEventListener("click", addToCollection("pokeID"));
+
+    card.append(pokeTitle, pokeTypes, button);
 
     pokedex.appendChild(card);
 }
@@ -96,6 +99,7 @@ function createTypes(types, div) {
         div.append(typeDiv)
     })
 }
+
 
 //SOURCE IMAGES
 

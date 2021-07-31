@@ -1,5 +1,9 @@
 @media only screen and (max-width: 768px) {
 
+    input {
+        border-radius: 0;
+    }
+
     .card {
         border-width: 3px;
         width: 30%;

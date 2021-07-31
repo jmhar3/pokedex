@@ -1,39 +1,20 @@
-// MODAL
-
-let modal = document.getElementsByClassName("modal");
-let close = document.getElementById('close');
-
-
-// CLOSE MODAL BUTTON
-
-close.addEventListener("click", () => {
-    document.querySelector(".modal").classList.add("hidden");
-})
-
 
 // COLLECTION BUTTON
 
-const collectionButton = document.querySelector('#collection-button')
+const collectionButton = document.querySelectorAll('.collection-button')
 
-collectionButton.addEventListener("click", () => {
-    if (collectionButton.innerText === "ADD TO COLLECTION") {
+function addToCollection(id) {
+    if (id.classList === "missing") {
+        id.classList('');
+        id.classList('caught')
         collectionButton.style.backgroundColor = 'royalblue';
         collectionButton.innerText = "REMOVE FROM COLLECTION"
     } else {
+        id.classList('');
+        id.classList('missing')
         collectionButton.style.backgroundColor = '#CC0000';
         collectionButton.innerText = "ADD TO COLLECTION"
     };
-})
-
-document.addEventListener("click", addToCollection);
-
-function addToCollection(e) {
-    const button = e.target;
-
-    if (button.classList === "title") {
-        const card = button.parentElement;
-        card.classList.toggle('caught');
-    }
 }
 
 
