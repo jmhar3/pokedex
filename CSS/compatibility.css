@@ -6,7 +6,10 @@
 
     .card {
         border-width: 3px;
-        width: 30%;
+        width: 27%;
+        margin: 2.1vw;
+        margin-bottom: 3.6vw;
+        height: 30vw;
     }
 
     .card:hover {
