@@ -1,21 +1,28 @@
+// FLIP CARD
+
+const card = document.querySelectorAll(".card-inner");
+
+function flipCard() {
+  this.classList.toggle('is-flipped');
+}
 
 // COLLECTION BUTTON
 
-const collectionButton = document.querySelectorAll('.collection-button')
-
-function addToCollection(id) {
-    if (id.classList === "missing") {
-        id.classList('');
-        id.classList('caught')
-        collectionButton.style.backgroundColor = 'royalblue';
-        collectionButton.innerText = "REMOVE FROM COLLECTION"
-    } else {
-        id.classList('');
-        id.classList('missing')
-        collectionButton.style.backgroundColor = '#CC0000';
-        collectionButton.innerText = "ADD TO COLLECTION"
-    };
-}
+// function addToCollection(pokeID, button) {
+//     button.onclick = () => {
+//         if (pokeID.classList === "missing") {
+//             pokeID.classList('');
+//             pokeID.classList.add('caught')
+//             button.style.backgroundColor = 'royalblue';
+//             button.innerText = "REMOVE FROM COLLECTION"
+//         } else {
+//             pokeID.classList('');
+//             pokeID.classList.add('missing')
+//             button.style.backgroundColor = '#CC0000';
+//             button.innerText = "ADD TO COLLECTION"
+//         };
+//     }
+// }
 
 
 // COLLECTION
@@ -35,9 +42,9 @@ function addToCollection(id) {
 // const missingTally = fetchPokemonList.reduce(pokemon => pokemon.collection === false);
 
 
-// set up local storage for pokemon collection
+// // set up local storage for pokemon collection
 
-// forEach pokemon
+// // forEach pokemon
 // card.addEventListener("click", e => {
 //     localStorage.setItem('collection', 'caught')
 // })

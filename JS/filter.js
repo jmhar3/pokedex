@@ -1,13 +1,3 @@
-// BACK TO TOP
-
-const icon = document.getElementById('header-icon');
-
-icon.addEventListener('click', () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-})
-
-
 // SEARCH
 
 const searchBar = document.getElementById('input');
@@ -24,6 +14,16 @@ searchBar.addEventListener('keyup', (e) => {
     pokeContainer.innerHTML = "";
     filteredPokemons.forEach(pokemon => renderPokemon(pokemon));
 });
+
+
+// BACK TO TOP
+
+const icon = document.getElementById('header-icon');
+
+icon.addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})
 
 
 // FILTER TYPES

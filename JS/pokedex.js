@@ -35,38 +35,63 @@ function storePokemon(pokemon) {
 
 // RENDER POKEMON
 
-const card = document.getElementsByClassName('card');
+const cardFront = document.getElementsByClassName('card-front');
+const cardBack = document.getElementsByClassName('card-back');
 
 const renderPokemon = pokemons => {
     let pokedex = document.getElementById('pokedex');
-    let card = document.createElement("a")
-    card.classList.add('card');
+    
+    let card = document.createElement("div");
+    card.classList.add("card");
 
-    createPokeImage(pokemons.id, card);
+    let cardInner = document.createElement("div");
+    cardInner.classList.add('card-inner');
+    cardInner.addEventListener("click", flipCard)
+
+    // CARD FRONT
+
+    let cardFront = document.createElement("div");
+    cardFront.classList.add('card-face', 'card-front');
+
+    createPokeImage(pokemons.id, cardFront);
 
     let pokeName = (pokemons.name).toUpperCase();
+    let pokeTitleFront = document.createElement('h4');
+    pokeTitleFront.innerText = `${pokeName}`
+    pokeTitleFront.classList.add('title');
+
+    cardFront.append(pokeTitleFront);
+
+
+    // CARD BACK
+
+    let cardBack = document.createElement("div");
+    cardBack.classList.add('card-face', 'card-back');
+
+    createPokeImage(pokemons.id, cardBack);
 
     let pokeID = String(pokemons.id).padStart(3, '0');
 
-    let pokeTitle = document.createElement('h4')
+    
+    let pokeTitle = document.createElement('h4');
     pokeTitle.innerText = `${pokeID} ${pokeName}`
     pokeTitle.classList.add('title');
 
-    let pokeTypes = document.createElement('div')
+    let pokeTypes = document.createElement('div');
     pokeTypes.className = 'type';
 
-    createTypes(pokemons.types, pokeTypes)
+    createTypes(pokemons.types, pokeTypes);
 
-    let button = document.createElement('button');
-    button.innerText = 'ADD TO COLLECTION';
-    button.classList.add('collection-button');
-    // button.addEventListener("click", addToCollection("pokeID"));
+    // let button = document.createElement('button');
+    // button.innerText = 'ADD TO COLLECTION';
+    // button.classList.add('collection-button');
+    // addToCollection(pokeID, button);
 
-    card.append(pokeTitle, pokeTypes, button);
-
+    cardBack.append(pokeTitle, pokeTypes);
+    cardInner.append(cardFront, cardBack);
+    card.append(cardInner);
     pokedex.appendChild(card);
 }
-
 
 //TYPES
 
@@ -103,11 +128,11 @@ function createTypes(types, div) {
 
 //SOURCE IMAGES
 
-function createPokeImage(pokeID, containerDiv) {
+function createPokeImage(id, containerDiv) {
     let pokeImgContainer = document.createElement('div');
 
     let pokeImage = document.createElement('img')
-    pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${pokeID}.png`
+    pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`
 
     pokeImgContainer.append(pokeImage);
     containerDiv.append(pokeImgContainer);
