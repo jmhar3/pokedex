@@ -8,6 +8,14 @@ function flipCard() {
 
 // COLLECTION BUTTON
 
+// const card = document.querySelectorAll(".card-inner");
+
+// function addToCollection() {
+//   this.classList.toggle('caught');
+// }
+
+
+
 // function addToCollection(pokeID, button) {
 //     button.onclick = () => {
 //         if (pokeID.classList === "missing") {
@@ -26,20 +34,17 @@ function flipCard() {
 
 
 // COLLECTION
+// auto update without reloading browser
 
 // let caughtTally = document.getElementById('caught');
 // let missingTally = document.getElementById('missing');
 // let collectionButton = document.getElementById('collection-button');
 
-// // auto update without reloading browser
 // missingTally.innerText = `MISSING = ${missingTally}`;
 // caughtTally.innerText = `CAUGHT = ${collectionTally}`;
 
 // const caughtPokemon = localStorage.getItem('collection');
 // const caughtTally = caughtPokemon.reduce(pokemon => pokemon.collection === true);
-
-// const missingPokemon = fetchPokemonList.filter(pokemon => pokemon.collection === false);
-// const missingTally = fetchPokemonList.reduce(pokemon => pokemon.collection === false);
 
 
 // // set up local storage for pokemon collection
@@ -53,6 +58,3 @@ function flipCard() {
 
 // // update
 // specificPokemon = localStorage.setItem('collection', 'caught')
-
-// // clear
-// localStorage.clear();

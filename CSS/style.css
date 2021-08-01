@@ -42,7 +42,7 @@ h4 {
 }
 
 h5 {
-    font-size: 2.4vw;
+    font-size: 1.5vw;
 }
 
 p, div, button {
@@ -79,6 +79,7 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1;
+    box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.2);
 }
 
 input, ::placeholder {
@@ -140,7 +141,7 @@ input:hover, header img:hover {
 .card {
     margin: 1.3%;
     margin-bottom: 3vw;
-    height: 18vw;
+    height: 19.5vw;
     width: 17.2%;
 }
 
@@ -174,26 +175,22 @@ input:hover, header img:hover {
 
 .card-front {
     border: 5px var(--gold) solid;
-    display: flex;
-    justify-content: center;
     background-color: white;
     text-align: center;
-    padding-top: .9vw;
-    padding-bottom: .9vw;
+    padding-top: 1.8vw;
 }
 
 .card-back {
     border: 5px var(--blue) solid;
     width: 100%;
     text-align: center;
-    padding-top: .9vw;
-    padding-bottom: .9vw;
+    padding-bottom: 1.5vw;
     transform: rotateY(180deg);
     background-color: white;
 }
 
-img {
-    width: 80%; 
+.card-front img, .card-back img {
+    height: 12vw;
 }
 
 .type {
@@ -207,11 +204,6 @@ img {
     padding: .6vw;
     border-radius: 9px;
     color: #fefefe;
-}
-
-.type p:hover {
-    opacity: 81%;
-    color: #ebe8d7;
 }
 
 /* COLLECTION BUTTON */

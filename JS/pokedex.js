@@ -53,14 +53,18 @@ const renderPokemon = pokemons => {
     let cardFront = document.createElement("div");
     cardFront.classList.add('card-face', 'card-front');
 
-    createPokeImage(pokemons.id, cardFront);
+    let pokeID = String(pokemons.id).padStart(3, '0');
+    let frontID = document.createElement('h4');
+    frontID.innerText = `${pokeID}`
 
     let pokeName = (pokemons.name).toUpperCase();
     let pokeTitleFront = document.createElement('h4');
     pokeTitleFront.innerText = `${pokeName}`
     pokeTitleFront.classList.add('title');
 
-    cardFront.append(pokeTitleFront);
+    cardFront.append(frontID, pokeTitleFront);
+    
+    createPokeImage(pokemons.id, cardFront);
 
 
     // CARD BACK
@@ -69,31 +73,27 @@ const renderPokemon = pokemons => {
     cardBack.classList.add('card-face', 'card-back');
 
     createPokeImage(pokemons.id, cardBack);
-
-    let pokeID = String(pokemons.id).padStart(3, '0');
-
     
     let pokeTitle = document.createElement('h4');
     pokeTitle.innerText = `${pokeID} ${pokeName}`
     pokeTitle.classList.add('title');
 
+    let pokeStats = document.createElement('h5');
+    pokeStats.innerText = `HEIGHT: ${pokemons.height} WEIGHT: ${pokemons.weight}`
+    pokeStats.classList.add('stats');
+
     let pokeTypes = document.createElement('div');
     pokeTypes.className = 'type';
-
     createTypes(pokemons.types, pokeTypes);
 
-    // let button = document.createElement('button');
-    // button.innerText = 'ADD TO COLLECTION';
-    // button.classList.add('collection-button');
-    // addToCollection(pokeID, button);
-
-    cardBack.append(pokeTitle, pokeTypes);
+    cardBack.append(pokeTitle, pokeStats, pokeTypes);
     cardInner.append(cardFront, cardBack);
     card.append(cardInner);
     pokedex.appendChild(card);
 }
 
-//TYPES
+
+// TYPES
 
 function createTypes(types, div) {
     types.forEach(type => {
@@ -126,13 +126,13 @@ function createTypes(types, div) {
 }
 
 
-//SOURCE IMAGES
+// SOURCE IMAGES
 
 function createPokeImage(id, containerDiv) {
     let pokeImgContainer = document.createElement('div');
 
     let pokeImage = document.createElement('img')
-    pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`
+    pokeImage.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
 
     pokeImgContainer.append(pokeImage);
     containerDiv.append(pokeImgContainer);
