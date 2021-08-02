@@ -1,5 +1,6 @@
 /* COLOUR SCHEME */
 :root {
+--light: #f0eee0;
 --yellow: #FFDE00;
 --gold: #B3A125;
 --blue: #3B4CCA;
@@ -20,7 +21,7 @@
 h1, h2, h3, h4, h5, a, p, header input {
     font-family: "EvioliteRegular";
     text-decoration: none;
-    color: #CC0000;
+    color: var(--maroon);
     font-weight: 400;
     margin: 0;
 }
@@ -63,7 +64,7 @@ html {
 
 body {
     margin: 0;
-    background-color: #f0eee0;
+    background-color: var(--light);
 }
 
 /* HEADER */
@@ -74,7 +75,7 @@ header {
     display: flex;
     align-items: center;
     align-content: stretch;
-    background-color: #f0eee0;
+    background-color: var(--light);
     height: 6.9vw;
     position: fixed;
     width: 100%;
@@ -87,7 +88,7 @@ input, ::placeholder {
     background-color: transparent;
     border: 0;
     font-size: 6vw;
-    color: #3B4CCA;
+    color: var(--blue);
     padding: 0;
     margin: 0;
     text-transform: uppercase;
@@ -96,7 +97,7 @@ input, ::placeholder {
 }
 
 input:focus {
-    color: #CC0000;
+    color: var(--maroon);
     outline: none !important;
 }
 
@@ -115,18 +116,6 @@ header img:hover, header h3:hover {
 input:hover, header img:hover {
     opacity: 87%;
 }
-
-/* header div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 22%;
-    padding-left: 3%;
-} */
-
-/* header h3 {
-    margin: 0;
-} */
 
 /* MAIN */
 
@@ -214,23 +203,6 @@ input:hover, header img:hover {
     padding: .45vw;
     border-radius: 9px;
     color: #fefefe;
-}
-
-/* COLLECTION BUTTON */
-
-.collection-button {
-    border: 0;
-    background-color: #CC0000;
-    font-size: .8vw;
-    color: #fff5b3;
-    border-radius: 9px;
-    padding: .6vw;
-    margin-top: .9vw;
-}
-
-.collection-button:hover {
-    background-color: #B3A125;
-    cursor: pointer;
 }
 
 /* FOOTER */

@@ -135,3 +135,12 @@ function createPokeImage(id, containerDiv) {
     pokeImgContainer.append(pokeImage);
     containerDiv.append(pokeImgContainer);
 }
+
+
+// FLIP CARD
+
+const card = document.querySelectorAll(".card-inner");
+
+function flipCard() {
+  this.classList.toggle('is-flipped');
+}
