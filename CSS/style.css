@@ -195,7 +195,7 @@ input:hover, header img:hover {
 }
 
 .card-back img {
-    height: 12vw;
+    height: 12.6vw;
 }
 
 .card-back h4 {
@@ -211,7 +211,7 @@ input:hover, header img:hover {
 
 .type p {
     background-color: rgb(152, 105, 212);
-    padding: .6vw;
+    padding: .45vw;
     border-radius: 9px;
     color: #fefefe;
 }
