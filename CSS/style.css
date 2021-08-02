@@ -177,7 +177,8 @@ input:hover, header img:hover {
     border: 5px var(--gold) solid;
     background-color: white;
     text-align: center;
-    padding-top: 1.8vw;
+    padding-top: .6vw;
+    padding-bottom: 1.2vw;
 }
 
 .card-back {
@@ -189,8 +190,17 @@ input:hover, header img:hover {
     background-color: white;
 }
 
-.card-front img, .card-back img {
+.card-front img {
+    height: 18vw;
+}
+
+.card-back img {
     height: 12vw;
+}
+
+.card-back h4 {
+    padding: 0;
+    margin: 0;
 }
 
 .type {

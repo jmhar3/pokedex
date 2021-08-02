@@ -54,15 +54,13 @@ const renderPokemon = pokemons => {
     cardFront.classList.add('card-face', 'card-front');
 
     let pokeID = String(pokemons.id).padStart(3, '0');
-    let frontID = document.createElement('h4');
-    frontID.innerText = `${pokeID}`
 
     let pokeName = (pokemons.name).toUpperCase();
     let pokeTitleFront = document.createElement('h4');
     pokeTitleFront.innerText = `${pokeName}`
     pokeTitleFront.classList.add('title');
 
-    cardFront.append(frontID, pokeTitleFront);
+    cardFront.append(pokeTitleFront);
     
     createPokeImage(pokemons.id, cardFront);
 
