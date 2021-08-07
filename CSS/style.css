@@ -35,7 +35,7 @@ h2 {
 }
 
 h3 {
-    font-size: 3.6vw;
+    font-size: 2.7vw;
 }
 
 h4 {
@@ -169,42 +169,48 @@ input:hover, header img:hover {
 }
 
 .modal {
-    background-color: var(--light);
+    background-color: rgba(240, 238,224, 0.69);
     height: 100%;
     width: 100%;
     display: block;
     position: fixed;
     z-index: 1;
-    left: 0;
 }
 
-.modal-card {
+.modal-inner {
     background-color: #fefefe;
     margin: 9% auto;
-    padding: 3vw;
-    border: 5px solid #B3A125;
+    padding: 1.2vw;
+    border: 5px solid var(--blue);
     border-radius: 15px;
-    width: 45%;
+    width: 21vw;
+    height: 27vw;
     display: block;
     text-align: center;
+    box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.2);
+}
+
+#modal-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #close {
-    width: 4.2vw;
-    height: 4.2vw;
-}
-
-#insignia, .evolve-transition {
-    width: 3.3vw;
-    height: 3.3vw;
+    width: 3vw;
+    height: 3vw;
+    float: left;
+    cursor: pointer;
 }
 
 #insignia {
-      padding-right: 1vw;
+    width: 2.4vw;
+    height: 2.4vw;
 }
 
 #pokemon-image {
-    width: 39vw;
+    width: 18vw;
 }
 
 /* FOOTER */
