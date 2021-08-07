@@ -8,7 +8,7 @@ searchBar.addEventListener('keyup', (e) => {
     const filteredPokemons = pokemons.filter(pokemon => {
         return (
             pokemon.name.toLowerCase().includes(searchString) ||
-            pokemon.types[0].type.name.toLowerCase().includes(searchString)
+            pokemon.types.some((type) => type['type']['name'].toLowerCase().match(searchString))
         );
     });
     pokeContainer.innerHTML = "";
