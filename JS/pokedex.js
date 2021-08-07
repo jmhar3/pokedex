@@ -44,49 +44,28 @@ const renderPokemon = pokemons => {
     let card = document.createElement("div");
     card.classList.add("card");
 
-    let cardInner = document.createElement("div");
-    cardInner.classList.add('card-inner');
-    cardInner.addEventListener("click", flipCard)
-
-    // CARD FRONT
-
-    let cardFront = document.createElement("div");
-    cardFront.classList.add('card-face', 'card-front');
-
+    //POKEMON TITLE
     let pokeID = String(pokemons.id).padStart(3, '0');
-
     let pokeName = (pokemons.name).toUpperCase();
-    let pokeTitleFront = document.createElement('h4');
-    pokeTitleFront.innerText = `${pokeName}`
-    pokeTitleFront.classList.add('title');
 
-    cardFront.append(pokeTitleFront);
-    
-    createPokeImage(pokemons.id, cardFront);
-
-
-    // CARD BACK
-
-    let cardBack = document.createElement("div");
-    cardBack.classList.add('card-face', 'card-back');
-
-    createPokeImage(pokemons.id, cardBack);
-    
     let pokeTitle = document.createElement('h4');
     pokeTitle.innerText = `${pokeID} ${pokeName}`
     pokeTitle.classList.add('title');
 
-    let pokeStats = document.createElement('h5');
-    pokeStats.innerText = `HEIGHT: ${pokemons.height} WEIGHT: ${pokemons.weight}`
-    pokeStats.classList.add('stats');
-
+    // CREATE TYPES
     let pokeTypes = document.createElement('div');
     pokeTypes.className = 'type';
     createTypes(pokemons.types, pokeTypes);
 
-    cardBack.append(pokeTitle, pokeStats, pokeTypes);
-    cardInner.append(cardFront, cardBack);
-    card.append(cardInner);
+    // MODAL BUTTON
+    let button = document.createElement('button');
+    button.innerText = 'see card';
+    button.dataset.pokemon = JSON.stringify(pokemons);
+    button.addEventListener("click", openModal);
+    
+    createPokeImage(pokemons.id, card);
+
+    card.append(pokeTitle, pokeTypes, button);
     pokedex.appendChild(card);
 }
 
@@ -126,21 +105,12 @@ function createTypes(types, div) {
 
 // SOURCE IMAGES
 
-function createPokeImage(id, containerDiv) {
+function createPokeImage(id, card) {
     let pokeImgContainer = document.createElement('div');
 
     let pokeImage = document.createElement('img')
     pokeImage.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
 
     pokeImgContainer.append(pokeImage);
-    containerDiv.append(pokeImgContainer);
-}
-
-
-// FLIP CARD
-
-const card = document.querySelectorAll(".card-inner");
-
-function flipCard() {
-  this.classList.toggle('is-flipped');
+    card.append(pokeImgContainer);
 }
