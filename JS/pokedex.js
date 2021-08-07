@@ -59,7 +59,7 @@ const renderPokemon = pokemons => {
 
     // MODAL BUTTON
     let button = document.createElement('button');
-    button.innerText = 'see more';
+    button.innerText = 'see card';
     button.dataset.pokemon = JSON.stringify(pokemons);
     button.addEventListener("click", openModal);
     

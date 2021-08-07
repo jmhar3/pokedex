@@ -161,6 +161,24 @@ input:hover, header img:hover {
     color: #fefefe;
 }
 
+.card button {
+    padding: .3vw;
+    border: 3px var(--maroon) solid;
+    border-radius: .6vw;
+    color: var(--maroon);
+}
+
+.card button:hover {
+    background-color: var(--maroon);
+    color: var(--light);
+}
+
+.card button:focus {
+    background-color: var(--blue);
+    color: var(--light);
+    border: 3px var(--blue) solid;
+}
+
 
 /* MODAL */
 
